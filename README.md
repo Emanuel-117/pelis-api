@@ -103,7 +103,7 @@ Deberías ver:
 ```json
 {
   "ok": true,
-  "message": "🎬 API CMS Cuevana - Institución Universitaria Digital de Antioquia",
+  "message": "🎬 API CMS Las pelis mas rapidas del oeste - Institución Universitaria Digital de Antioquia",
   "version": "1.0.0",
   "endpoints": {
     "generos":     "/api/generos",
