@@ -1,4 +1,4 @@
-# 🎬 CMS Cuevana — API REST
+# 🎬 CMS Las pelis mas rapidas del oeste — API REST
 ### Institución Universitaria Digital de Antioquia
 
 Backend de gestión de contenidos (películas y series) con Node.js, Express y MongoDB Atlas.
