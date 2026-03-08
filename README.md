@@ -68,8 +68,6 @@ PORT=4000
 MONGODB_URI=mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<nombre>
 ```
 
-> ⚠️ **Nunca subas el `.env` a GitHub.** Ya está en el `.gitignore`.
-> Si clonaste el proyecto desde cero, pídele el `.env` al responsable del equipo.
 
 ### Paso 3 — Instalar dependencias
 
