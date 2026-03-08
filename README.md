@@ -23,10 +23,10 @@ Antes de empezar, asegúrate de tener instalado:
 ```
 peliculas_api/
 └── backend/
-    ├── .env                  ← Variables de entorno (NO subir a Git)
+    ├── .env                  
     ├── .gitignore
     ├── package.json
-    ├── index.js              ← Servidor principal (entry point)
+    ├── index.js              
     ├── database/
     │   └── conection-db-mongo.js
     ├── models/
