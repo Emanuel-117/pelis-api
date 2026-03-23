@@ -47,6 +47,17 @@ peliculas_api/
         ├── productora.routes.js
         ├── type.routes.js
         └── media.routes.js
+└── frontend/                 
+    ├── src/
+    │   ├── api/               # Instancia de Axios (Intercepta errores globales)
+    │   ├── components/        # Bloques de Lego (Skeletons, Tablas, Formularios)
+    │   ├── context/           # Estado Global (Notificaciones Toasts)
+    │   ├── hooks/             # Lógica (Caché en memoria de 30s)
+    │   ├── pages/             # Vistas de cada módulo
+    │   ├── App.jsx            # Router SPA
+    │   └── index.css          # Estilos CSS puros (Glassmorphism)
+    ├── .env                   # URL del Backend
+    └── package.json           # Paquetes (Vite, React, Bootstrap)
 ```
 
 ---
