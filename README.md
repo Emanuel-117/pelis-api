@@ -53,7 +53,11 @@ peliculas_api/
 
 ## 🚀 Pasos para ejecutar el proyecto
 
-### Paso 1 — Entrar a la carpeta del backend
+Este proyecto contiene un **Monorepo** dividido en Servidor (Backend en puerto 4000) y Panel de Control (Frontend en puerto 5173). **Debes encender ambos** ocupando dos ventanas de terminal separadas.
+
+### 🟢 PARTE 1: Levantar el Backend (Base de Datos)
+
+#### Paso 1 — Entrar a la carpeta del backend
 
 ```bash
 cd backend
@@ -118,6 +122,27 @@ Y en la terminal debe aparecer:
 --- 🟢 Servidor corriendo en el puerto 4000 ---
 ✅ Conexión a MongoDB exitosa
 ```
+
+---
+
+### 🔵 PARTE 2: Levantar el Frontend (Panel de React)
+
+#### Paso 1 — Abrir una *nueva* terminal y entrar a frontend
+```bash
+cd frontend
+```
+
+#### Paso 2 — Instalar las dependencias de React
+```bash
+npm install
+```
+
+#### Paso 3 — Iniciar el Servidor de Desarrollo
+```bash
+npm run dev
+```
+
+> ✅ **El panel visual se encenderá en el puerto `5173`.** Entra en tu navegador a: `http://localhost:5173`
 
 ---
 
