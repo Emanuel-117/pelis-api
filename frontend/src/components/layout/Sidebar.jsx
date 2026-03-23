@@ -31,7 +31,7 @@ export default function Sidebar() {
             {/* Header */}
             <div className="sidebar-header">
                 <div className="sidebar-logo"><MdLocalMovies style={{ color: '#fff' }} /></div>
-                <span className="sidebar-title">CMS Peliculas</span>
+                <span className="sidebar-title">Las Pelis del Oeste</span>
             </div>
 
             {/* Navigation */}

@@ -34,8 +34,8 @@ export default function Dashboard() {
         <div className="page-fade">
             <div className="page-header">
                 <div>
-                    <h1 className="page-title">Panel de Administración</h1>
-                    <p className="page-subtitle">Gestiona el contenido de la plataforma de entretenimiento</p>
+                    <h1 className="page-title">Panel de Control</h1>
+                    <p className="page-subtitle">Gestiona el contenido de Las Mejores Pelis del Oeste</p>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function Dashboard() {
             </div>
 
             <div className="glass-card" style={{ padding: '1.5rem' }}>
-                <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '.5rem' }}>Bienvenido al CMS</h2>
+                <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '.5rem' }}>Bienvenido a Las mejores pelis del oeste</h2>
                 <p style={{ color: 'var(--color-text-muted)', fontSize: '.9rem', lineHeight: 1.7, maxWidth: 600 }}>
                     Desde aquí puedes gestionar todo el contenido de la plataforma de entretenimiento de la{' '}
                     <strong style={{ color: 'var(--color-accent)' }}>Institución Universitaria Digital de Antioquia</strong>.
