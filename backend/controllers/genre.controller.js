@@ -1,4 +1,4 @@
-const Genre = require('../models/Genre');
+const Genre = require('../models/genre.model');
 
 // GET /api/generos  - Listar todos los géneros
 const getAllGenres = async (req, res) => {
@@ -78,7 +78,7 @@ const updateGenre = async (req, res) => {
 // DELETE /api/generos/:id  - Eliminar un género
 const deleteGenre = async (req, res) => {
     try {
-        const Media = require('../models/Media');
+        const Media = require('../models/media.model');
         const mediaCount = await Media.countDocuments({ genero: req.params.id });
         if (mediaCount > 0) {
             return res.status(409).json({

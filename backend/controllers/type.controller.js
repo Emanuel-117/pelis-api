@@ -1,4 +1,4 @@
-const Type = require('../models/Type');
+const Type = require('../models/type.model');
 
 // GET /api/tipos  - Listar todos los tipos
 const getAllTypes = async (req, res) => {
@@ -74,7 +74,7 @@ const updateType = async (req, res) => {
 // DELETE /api/tipos/:id  - Eliminar un tipo
 const deleteType = async (req, res) => {
     try {
-        const Media = require('../models/Media');
+        const Media = require('../models/media.model');
         const mediaCount = await Media.countDocuments({ tipo: req.params.id });
         if (mediaCount > 0) {
             return res.status(409).json({

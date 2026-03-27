@@ -1,8 +1,8 @@
-const Media = require('../models/Media');
-const Genre = require('../models/Genre');
-const Director = require('../models/Director');
-const Productora = require('../models/Productora');
-const Type = require('../models/Type');
+const Media = require('../models/media.model');
+const Genre = require('../models/genre.model');
+const Director = require('../models/director.model');
+const Productora = require('../models/productora.model');
+const Type = require('../models/type.model');
 
 // Validar genero, director, productora y tipo Activos
 const validateBusinessRules = async ({ generoId, directorId, productoraId, tipoId }) => {

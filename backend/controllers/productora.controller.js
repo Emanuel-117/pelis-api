@@ -1,4 +1,4 @@
-const Productora = require('../models/Productora');
+const Productora = require('../models/productora.model');
 
 // GET /api/productoras  - Listar todas las productoras
 const getAllProductoras = async (req, res) => {
@@ -78,7 +78,7 @@ const updateProductora = async (req, res) => {
 // DELETE /api/productoras/:id  - Eliminar una productora
 const deleteProductora = async (req, res) => {
     try {
-        const Media = require('../models/Media');
+        const Media = require('../models/media.model');
         const mediaCount = await Media.countDocuments({ productora: req.params.id });
         if (mediaCount > 0) {
             return res.status(409).json({

@@ -1,4 +1,4 @@
-const Director = require('../models/Director');
+const Director = require('../models/director.model');
 
 // GET /api/directores  - Listar todos los directores
 const getAllDirectors = async (req, res) => {
@@ -72,7 +72,7 @@ const updateDirector = async (req, res) => {
 // DELETE /api/directores/:id  - Eliminar un director
 const deleteDirector = async (req, res) => {
     try {
-        const Media = require('../models/Media');
+        const Media = require('../models/media.model');
         const mediaCount = await Media.countDocuments({ director: req.params.id });
         if (mediaCount > 0) {
             return res.status(409).json({
