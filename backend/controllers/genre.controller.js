@@ -57,7 +57,7 @@ const updateGenre = async (req, res) => {
         const genre = await Genre.findByIdAndUpdate(
             req.params.id,
             { nombre, estado, descripcion },
-            { new: true, runValidators: true }
+            { returnDocument: 'after', runValidators: true }
         );
         if (!genre) {
             return res.status(404).json({ ok: false, message: 'Género no encontrado' });

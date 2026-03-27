@@ -100,8 +100,8 @@ export default function MediaList() {
                                             <div style={{ fontWeight: 600, fontSize: '1rem', color: 'var(--color-text)', marginBottom: '.2rem' }}>
                                                 {item.titulo}
                                             </div>
-                                            <div style={{ fontSize: '.75rem', color: 'var(--color-text-muted)', fontFamily: 'monospace' }}>
-                                                {item.serial?.substring(0, 13)}...
+                                            <div style={{ fontSize: '.75rem', color: 'var(--color-accent)', fontFamily: 'monospace', fontWeight: 600 }}>
+                                                {item.serial}
                                             </div>
                                         </td>
                                         <td>

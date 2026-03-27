@@ -7,10 +7,12 @@ const typeSchema = new mongoose.Schema(
             required: [true, 'El nombre del tipo es obligatorio'],
             trim: true,
             unique: true,
-            enum: {
-                values: ['Serie', 'Película'],
-                message: 'El nombre del tipo debe ser "Serie" o "Película"',
-            },
+        },
+        estado: {
+            type: String,
+            required: [true, 'El estado es obligatorio'],
+            enum: ['Activo', 'Inactivo'],
+            default: 'Activo',
         },
         descripcion: {
             type: String,

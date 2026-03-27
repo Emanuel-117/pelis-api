@@ -57,7 +57,7 @@ const updateProductora = async (req, res) => {
         const productora = await Productora.findByIdAndUpdate(
             req.params.id,
             { nombre, estado, slogan, descripcion },
-            { new: true, runValidators: true }
+            { returnDocument: 'after', runValidators: true }
         );
         if (!productora) {
             return res.status(404).json({ ok: false, message: 'Productora no encontrada' });

@@ -30,8 +30,8 @@ const getTypeById = async (req, res) => {
 // POST /api/tipos  - Crear un tipo
 const createType = async (req, res) => {
     try {
-        const { nombre, descripcion } = req.body;
-        const type = new Type({ nombre, descripcion });
+        const { nombre, descripcion, estado } = req.body;
+        const type = new Type({ nombre, descripcion, estado });
         const saved = await type.save();
         return res.status(201).json({ ok: true, message: 'Tipo creado exitosamente', data: saved });
     } catch (error) {
@@ -49,11 +49,11 @@ const createType = async (req, res) => {
 // PUT /api/tipos/:id  - Actualizar un tipo
 const updateType = async (req, res) => {
     try {
-        const { nombre, descripcion } = req.body;
+        const { nombre, descripcion, estado } = req.body;
         const type = await Type.findByIdAndUpdate(
             req.params.id,
-            { nombre, descripcion },
-            { new: true, runValidators: true }
+            { nombre, descripcion, estado },
+            { returnDocument: 'after', runValidators: true }
         );
         if (!type) {
             return res.status(404).json({ ok: false, message: 'Tipo no encontrado' });

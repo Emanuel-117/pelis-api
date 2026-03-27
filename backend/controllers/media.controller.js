@@ -93,7 +93,7 @@ const updateMedia = async (req, res) => {
         if (errors.length > 0) return res.status(422).json({ ok: false, errors });
 
         const media = await populateMedia(
-            Media.findByIdAndUpdate(req.params.id, { titulo, sinopsis, url, imagen_portada, anio_estreno, genero, director, productora, tipo }, { new: true, runValidators: true })
+            Media.findByIdAndUpdate(req.params.id, { titulo, sinopsis, url, imagen_portada, anio_estreno, genero, director, productora, tipo }, { returnDocument: 'after', runValidators: true })
         );
         if (!media) return res.status(404).json({ ok: false, message: 'Producción no encontrada' });
         res.json({ ok: true, message: 'Producción actualizada', data: media });

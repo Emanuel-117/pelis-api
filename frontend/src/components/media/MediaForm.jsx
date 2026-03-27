@@ -34,8 +34,8 @@ export default function MediaForm() {
                     generos.getAll(), directores.getAll(), productoras.getAll(), tipos.getAll()
                 ]);
 
-                // Regla de Negocio: Solo mostrar entidades ACTIVAS
-                const activos = (arr) => arr.filter((x) => x.estado === 'Activo');
+                // Regla de Negocio: Solo mostrar entidades ACTIVAS o las que no tengan estado definido (retrocompatibilidad)
+                const activos = (arr) => arr.filter((x) => x.estado === 'Activo' || typeof x.estado === 'undefined');
 
                 setLists({
                     generos: activos(gRes.data?.data || []),

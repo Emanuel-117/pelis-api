@@ -54,7 +54,7 @@ const updateDirector = async (req, res) => {
         const director = await Director.findByIdAndUpdate(
             req.params.id,
             { nombres, estado },
-            { new: true, runValidators: true }
+            { returnDocument: 'after', runValidators: true }
         );
         if (!director) {
             return res.status(404).json({ ok: false, message: 'Director no encontrado' });

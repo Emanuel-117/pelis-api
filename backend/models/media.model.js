@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
-const { v4: uuidv4 } = require('uuid');
+
 
 const mediaSchema = new mongoose.Schema(
     {
         serial: {
             type: String,
             unique: true,
-            default: () => uuidv4(),
         },
         titulo: {
             type: String,
@@ -66,5 +65,38 @@ const mediaSchema = new mongoose.Schema(
         versionKey: false,
     }
 );
+
+// Generador de Serial Automático Dinámico (Depende del Tipo)
+mediaSchema.pre('save', async function () {
+    if (this.isNew) {
+        // 1. Determinar el prefijo leyendo la relación del Tipo en la BD
+        const Type = mongoose.model('Type');
+        const tipoDoc = await Type.findById(this.tipo);
+        let prefijo = 'MED'; // Por defecto (Media)
+        
+        if (tipoDoc) {
+            const nombreTipo = tipoDoc.nombre.toLowerCase();
+            if (nombreTipo.includes('pel')) prefijo = 'PELI';
+            else if (nombreTipo.includes('serie')) prefijo = 'SERIE';
+            else if (nombreTipo.includes('doc')) prefijo = 'DOC';
+        }
+
+        // 2. Buscar último registro con EXACTAMENTE ese prefijo
+        const regex = new RegExp(`^${prefijo}-`);
+        const lastMedia = await this.constructor.findOne({ serial: regex }).sort({ serial: -1 });
+        let nextNumber = 1;
+        
+        // 3. Incrementador
+        if (lastMedia && lastMedia.serial) {
+            const parts = lastMedia.serial.split('-');
+            if (parts.length === 2 && !isNaN(parts[1])) {
+                nextNumber = parseInt(parts[1], 10) + 1;
+            }
+        }
+        
+        // 4. Asignar padding de 3 ceros (ej. PELI-001, SERIE-015)
+        this.serial = `${prefijo}-${nextNumber.toString().padStart(3, '0')}`;
+    }
+});
 
 module.exports = mongoose.model('Media', mediaSchema);
